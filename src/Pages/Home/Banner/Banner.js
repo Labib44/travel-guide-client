@@ -36,7 +36,7 @@ const Banner = () => {
                     <a href="#slide4" className="btn btn-circle">❯</a>
                 </div>
                 <div className="absolute  transform -translate-y-1/2 left-1/3 top-1/2">
-                    <h1 className='text-6xl font-bold text-white'>Shylet</h1>
+                    <h1 className='text-6xl font-bold text-white'>Sylhet </h1>
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">

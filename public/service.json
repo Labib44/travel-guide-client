@@ -1,0 +1,58 @@
+[
+	{
+		"id": 1,
+		"price": "$485",
+		"picture": "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+		"rating": 4.8,
+		"totalView": 1350,
+		"title": "Cox bazar sea beach",
+		"details": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south.The name Cox's Bazar originated from the name of a British East India Company officer, Captain Hiram Cox, who was appointed as the Superintendent of Palonki (today's Cox's Bazar) outpost.  Cox's Bazar was first established in 1854 and became a municipality in 1869."
+	},
+	{
+		"id": 2,
+		"price": "$585",
+		"picture": "https://images.unsplash.com/photo-1578128178799-ffbb862243c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+		"rating": 5.0,
+		"totalView": 1580,
+		"title": "Sajek valley, bangladesh",
+		"details": "Sajek Tripuri Valley is one of the most popular tourist spots in Bangladesh situated among the hills of the Kasalong range of mountains in Sajek union, Baghaichhari Upazila in Rangamati District. The valley is 2,000 feet above sea level. Sajek Tripuri Valley is known as the Queen of Hills & Roof of Rangamati."
+	},
+	{
+		"id": 3,
+		"price": "$325",
+		"picture": "https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+		"rating": 4.7,
+		"totalView": 2350,
+		"title": "Saint Martin cox's bazar",
+		"details": "Millennia ago, the island used to be an extension of the Teknaf peninsula, but at a later time some portion of this peninsula got submerged and thus the southernmost part of the aforementioned peninsula became an island, and was disconnected from the Bangladesh mainland. The first settlement started 250 years ago, in 18th century, by Arabian merchants who named the island 'Jazira'. During British occupation the island was named after the then Deputy Commissioner of Chittagong Mr. Martin as St. Martin Island. Likely because one or more of the Arabs were Saint and whose name could not be identified. Local names of the island are Narikel jinjira[3] which means 'Coconut Island', and Daruchini Dwip which means Cinnamon island. It is the only coral island in Bangladesh."
+	},
+	{
+		"id": 4,
+		"price": "$485",
+		"picture": "https://images.unsplash.com/photo-1596374004290-2d0788efc9b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+		"rating": 4.8,
+		"totalView": 1350,
+		"title": "Sylhet, bangladesh",
+		"details": "Sylhet is a city in eastern Bangladesh, on the Surma River. It’s known for its Sufi shrines, like the ornate tomb and mosque of 14th-century saint Hazrat Shah Jalal, now a major pilgrimage site near Dargah Gate. The tiny Museum of Rajas contains belongings of the local folk poet Hasan Raja. A 3-domed gateway stands at the 17th-century Shahi Eidgah, a huge open-air hilltop mosque built by Emperor Aurangzeb."
+	},
+	{
+		"id": 5,
+		"price": "$485",
+		"picture": "https://images.unsplash.com/photo-1624485871361-65454b13edfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2058&q=80",
+		"rating": 3.8,
+		"totalView": 1350,
+		"title": "Bandarban, bangladesh",
+		"details": "The three highest peaks of Bangladesh – Tahjindong (1,280 meters, also known as Bijoy), Mowdok Mual (1,052 meters), and Keokradong (883 metres) – are located in Bandarban district, as well as Raikhiang Lake, the highest lake in Bangladesh. Several mountains in the district include Tahjindong (1,280 meters), Mowdok Mual (1,052 m), and Keokradong (1,230 m). Chimbuk Peak and Boga Lake are two more highly noted features of the district. The Sangu River (also known as Sangpo or Shankha), the only river born inside Bangladesh territory, runs through Bandarban. The other rivers in the district are Matamuhuri and Bakkhali. Parts of Kaptai Lake, the biggest lake in Bangladesh, fall under the district."
+	},
+	{
+		"id": 6,
+		"price": "$485",
+		"picture": "https://images.unsplash.com/photo-1551615577-1c7e180a77ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1567&q=80",
+		"rating": 4.8,
+		"totalView": 1350,
+		"title": "Sundarban, bangladesh",
+		"details": "Sundarbans is a mangrove area in the delta formed by the confluence of the Padma, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans the area from the Baleswar River in Bangladesh's division of Khulna to the Hooghly River in India's state of West Bengal"
+	}
+	
+	
+]
