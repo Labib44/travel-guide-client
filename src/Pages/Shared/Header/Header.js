@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/logo.png'
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
             </div>
             <div className="flex-1">
                 <img className='w-20 h-16' src={logo} alt="" />
-                <a href='/' className="btn btn-ghost normal-case text-xl">Travel Guide</a>
+                <Link href='/' className="btn btn-ghost normal-case text-xl">Travel Guide</Link>
             </div>
             <div className="flex-none">
                 <button className="btn btn-square btn-ghost">
