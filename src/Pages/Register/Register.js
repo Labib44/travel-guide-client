@@ -1,6 +1,11 @@
 import React from 'react';
 
 const Register = () => {
+
+    const handleLogin=(event)=>{
+        event.preventDeafult();
+
+    }
     return (
         <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-sky-700 text-gray-100 mx-auto my-5">
             <h2 className="mb-3 text-3xl font-semibold text-center">Register your account</h2>
@@ -13,7 +18,7 @@ const Register = () => {
                 <p className="px-3 dark:text-gray-400">OR</p>
                 <hr className="w-full dark:text-gray-400" />
             </div>
-            <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+            <form onSubmit={handleLogin} novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <label for="email" className="block text-sm">Name</label>
