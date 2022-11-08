@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle,FaGithub,FaTwitter } from 'react-icons/fa';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {login}=useContext(AuthContext);
+
+    const handleLogin=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(email, password)
+
+        login(email, password)
+        .then(result =>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>console.error(error))
+    }
     return (
         <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-sky-700 text-gray-100 mx-auto my-5">
             <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
@@ -27,7 +44,7 @@ const Login = () => {
                 <p className="px-3 dark:text-gray-400">OR</p>
                 <hr className="w-full dark:text-gray-400" />
             </div>
-            <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+            <form onSubmit={handleLogin} className="space-y-8 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <label for="email" className="block text-sm">Email address</label>
@@ -41,7 +58,7 @@ const Login = () => {
                         <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
                     </div>
                 </div>
-                <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign in</button>
+                <button type="submite" className="w-full px-8 py-3 font-semibold rounded-md bg-sky-400 text-gray-900 text-xl">Sign in</button>
             </form>
         </div>
     );

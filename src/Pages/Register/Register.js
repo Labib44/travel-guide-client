@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const {createUser}=useContext(AuthContext);
 
-    const handleLogin=(event)=>{
-        event.preventDeafult();
+    const handleSignUp=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const name=form.name.value;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(name, email, password);
 
+        createUser(email, password)
+        .then(result =>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>console.error(error))
     }
     return (
         <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-sky-700 text-gray-100 mx-auto my-5">
@@ -18,11 +31,11 @@ const Register = () => {
                 <p className="px-3 dark:text-gray-400">OR</p>
                 <hr className="w-full dark:text-gray-400" />
             </div>
-            <form onSubmit={handleLogin} novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+            <form onSubmit={handleSignUp}  className="space-y-8 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <label for="email" className="block text-sm">Name</label>
-                        <input type="email" name="name" id="name" placeholder="Your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
+                        <input type="text" name="name" id="name" placeholder="Your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-2">
                         <label for="email" className="block text-sm">Email address</label>
@@ -33,10 +46,11 @@ const Register = () => {
                             <label for="password" className="text-sm">Password</label>
                             
                         </div>
-                        <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
+                        <input type="password" name="password" id="password" placeholder="******" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
                     </div>
                 </div>
-                <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Submite</button>
+                <button type="submite" className="w-full  px-8 py-3 font-semibold rounded-md bg-sky-400 text-gray-900 text-xl">Submite</button>
+                
             </form>
         </div>
     );
