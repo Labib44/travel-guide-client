@@ -1,9 +1,21 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGoogle,FaGithub,FaTwitter } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login}=useContext(AuthContext);
+    const {login,googleLogin}=useContext(AuthContext);
+    const googlProvider= new GoogleAuthProvider();
+
+
+    const handleGoogleLogin=()=>{
+        googleLogin(googlProvider)
+        .then(result =>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>console.error(error))
+    }
 
     const handleLogin=(event)=>{
         event.preventDefault();
@@ -26,7 +38,7 @@ const Login = () => {
                 <a href="/register" rel="noopener noreferrer" className="focus:underline hover:underline ml-3">Sign up here</a>
             </p>
             <div className="my-6 space-y-4">
-                <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400">
+                <button onClick={handleGoogleLogin} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400">
                     <FaGoogle className='mr-3 text-xl'></FaGoogle> Login with Google
                    
                 </button>
