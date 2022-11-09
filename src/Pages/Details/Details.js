@@ -3,12 +3,13 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaEye, FaStar } from 'react-icons/fa';
 
 const Details = () => {
-    const { price, totalView, rating, details, picture, title } = useLoaderData();
+    const {_id, price, totalView, rating, details, picture, title } = useLoaderData();
     return (
         <div className="card w-96 bg-base-100 shadow-xl mx-auto m-10">
             <figure><img src={picture} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
+                <p>Price: {price}</p>
                 <p>{details}</p>
                 <div className="card-actions justify-between">
                     <div className='flex justify-between p-3'>

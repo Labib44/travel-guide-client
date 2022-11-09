@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -11,7 +13,8 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div className='bg-slate-300'>
+        
+            <div className='bg-slate-300'>
             <div className='text-center'>
                 <h1 className='text-6xl text-sky-700 p-5'>My Services</h1>
             </div>
@@ -29,6 +32,7 @@ const Services = () => {
                 <Link to={'/allServicess'} className='btn'>See More Services</Link>
             </div>
         </div>
+          
     );
 };
 

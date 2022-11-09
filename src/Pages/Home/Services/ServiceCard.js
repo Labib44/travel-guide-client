@@ -2,12 +2,15 @@ import React from 'react';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './ServiceCard.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 
 const ServiceCard = ({ service }) => {
     const { _id, price, totalView, rating, details, picture, title } = service;
     return (
-        <div className="card w-full  bg-base-100 shadow-2xl ">
-            <figure><img className='w-full' src={picture} alt="Shoes" style={{height:300}} /></figure>
+        <PhotoProvider>
+            <div className="card w-full  bg-base-100 shadow-2xl ">
+            <figure><PhotoView src={picture}><img className='w-full' src={picture} alt="Shoes" style={{height:300}} /></PhotoView></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p className='text-xl'>Price: {price}</p>
@@ -35,6 +38,7 @@ const ServiceCard = ({ service }) => {
                 </div>
             </div>
         </div>
+        </PhotoProvider>
     );
 };
 

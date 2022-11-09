@@ -1,14 +1,17 @@
 import React from 'react';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const AllServiceCard = ({ allService }) => {
     const { _id, price, totalView, rating, details, picture, title } = allService;
     return (
-        <div className="card w-full bg-base-100 shadow-xl">
-            <figure><img className='w-full' src={picture} alt="Shoes" style={{height:300}}/></figure>
+        <PhotoProvider>
+            <div className="card w-full bg-base-100 shadow-xl">
+            <figure><PhotoView src={picture}><img className='w-full' src={picture} alt="Shoes" style={{height:300}}/></PhotoView></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
+                <h2 className="card-title">{price}</h2>
                 {
                 details.length > 100 ?
                 <p>{details.slice(0,100) + '...'} <Link>Read More</Link></p>
@@ -33,6 +36,7 @@ const AllServiceCard = ({ allService }) => {
                 </div>
             </div>
         </div>
+        </PhotoProvider>
     );
 };
 

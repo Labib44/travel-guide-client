@@ -15,6 +15,8 @@ const Header = () => {
                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">Travel Guide</Link>
             </div>
             <div className="flex-none">
+            <Link to={'/myreviews'} className="btn btn-ghost normal-case text-xl">My Reviews</Link>
+            <Link to={'/addservice'} className="btn btn-ghost normal-case text-xl">Add Service</Link>
             <Link to={'/login'} className="btn btn-ghost normal-case text-xl">Login</Link>
             <Link to={'/blog'} className="btn btn-ghost normal-case text-xl">Blog</Link>
             <Link to={'/about'} className="btn btn-ghost normal-case text-xl">About</Link>
