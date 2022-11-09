@@ -13,16 +13,16 @@ const Details = () => {
                 <div className="card-actions justify-between">
                     <div className='flex justify-between p-3'>
 
-                    <div className='flex mr-3'>
-                    <FaEye className='mr-2'></FaEye> {totalView}
-                    </div>
-                    <div className='flex'>
-                    <FaStar className='mr-2'></FaStar> {rating} 
-                    </div>  
+                        <div className='flex mr-3'>
+                            <FaEye className='mr-2'></FaEye> {totalView}
+                        </div>
+                        <div className='flex'>
+                            <FaStar className='mr-2'></FaStar> {rating}
+                        </div>
 
                     </div>
                     <div>
-                        
+                        <Link to={'/review'} className="btn btn-primary mr-5">Review </Link>
                         <Link className="btn btn-primary">Book Now</Link>
                     </div>
                 </div>
