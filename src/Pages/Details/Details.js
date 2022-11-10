@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Details = () => {
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const { _id, price, totalView, rating, details, picture, title } = useLoaderData();
     const [reviews, setReview] = useState([]);
 
@@ -15,6 +15,24 @@ const Details = () => {
             .then(data => setReview(data))
     }, [])
 
+
+    const handleDelete=(id)=>{
+        const proceed=window.confirm('Are you sure...?')
+        if(proceed){
+            fetch(`http://localhost:5000/review/${id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('Deleted Successfully');
+                    const remaining=reviews.filter(rev=>rev._id !==id);
+                    setReview(remaining);
+                }
+            })
+        }
+    }
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
@@ -46,19 +64,26 @@ const Details = () => {
             {/* Review section  */}
 
             <div>
+                
             {
                 reviews.map(review => <div className=''>
                     <div className="flex flex-col max-w-lg p-3 m-10 space-y-3 overflow-hidden rounded-lg shadow-2xl  text-gray-800">
                     <div className="flex space-x-4">
-                        <img alt="" src={user.photoURL} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                        <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                         <div className="flex flex-col space-y-1">
                             <a rel="noopener noreferrer" href="/" className="text-sm font-semibold">{review.name}</a>
                         </div>
                     </div>
+                    <div className='flex justify-between'>
                     <div>
                         <p className="text-2xl  text-orange-500">{review.title}</p>
                         <p className="text-xl text-gray-700">Rating: {review.rating}</p>
                         <p className="text-sm text-gray-700">{review.comment}</p>
+                        
+                    </div>
+                    <div>
+                    <button onClick={()=>handleDelete(_id)} className="btn ">Delete</button>
+                    </div>
                     </div>
                 </div>
 

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/logo.png'
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user}=useContext(AuthContext);
     return (
         <div className="navbar bg-neutral">
             <div className="flex-none">
@@ -15,9 +17,15 @@ const Header = () => {
                 <Link to={'/'} className="btn btn-ghost normal-case text-xl">Travel Guide</Link>
             </div>
             <div className="flex-none">
+            
+            {user?.email ?
+            <>
             <Link to={'/myreviews'} className="btn btn-ghost normal-case text-xl">My Reviews</Link>
             <Link to={'/addservice'} className="btn btn-ghost normal-case text-xl">Add Service</Link>
-            <Link to={'/login'} className="btn btn-ghost normal-case text-xl">Login</Link>
+            </>
+            :
+                <Link to={'/login'} className="btn btn-ghost normal-case text-xl">Login</Link>
+            }
             <Link to={'/blog'} className="btn btn-ghost normal-case text-xl">Blog</Link>
             <Link to={'/about'} className="btn btn-ghost normal-case text-xl">About</Link>
                 <button className="btn btn-square btn-ghost">
