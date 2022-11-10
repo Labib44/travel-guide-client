@@ -5,10 +5,36 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://travel-guide-server-woad.vercel.app/review')
             .then(res => res.json())
             .then(data => setMyReviews(data))
     }, [])
+
+    const handleDelete=(_id)=>{
+        console.log(_id);
+        const proceed=window.confirm('Are you sure...?')
+        if(proceed){
+            fetch(`https://travel-guide-server-woad.vercel.app/review/${_id}`,{
+                method:'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('Deleted Successfully');
+                    const remaining=myReviews.filter(rev=>rev._id !==_id);
+                    setMyReviews(remaining);
+                }
+            })
+        }
+    }
+
+
+  
+
     return (
         <div className='m-10'>
         <div className='text-center'>
@@ -19,6 +45,8 @@ const MyReviews = () => {
                myReviews.map(r=> <MyReviewsCard
                key={r._id}
                r={r}
+               
+               handleDelete={handleDelete}
                >
 
                </MyReviewsCard>)

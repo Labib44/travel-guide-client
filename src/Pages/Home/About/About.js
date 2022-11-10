@@ -8,7 +8,7 @@ const About = () => {
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">Welcome To
-                        Travel Giide.</h2>
+                        Travel Guide.</h2>
                     <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">Get ready for real time adventure.</p>
                 </div>
                 <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
@@ -65,7 +65,7 @@ const About = () => {
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div className="lg:col-start-2">
                             <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-50">About Me</h3>
-                            <p className="mt-3 text-lg dark:text-gray-400">Labibur Rahman, Founder and CEO of Secure Ambit. He graduated in Computer Science and Engineering from Daffodil International University, Bangladesh and completed another course in Computer System and Networking from Universiti Tenaga Nasional (UNITEN), Putrajaya, Malaysia. He started his career as an entrepreneur in 2018. He was also the founding member of another two companies for several years.</p>
+                            <p className="mt-3 text-lg dark:text-gray-400">Labibur Rahman, Founder and CEO of Travel Guide. He graduated in Computer Science and Engineering from Daffodil International University, Bangladesh and completed another course in Computer System and Networking from Universiti Tenaga Nasional (UNITEN), Putrajaya, Malaysia. He started his career as an entrepreneur in 2018. He was also the founding member of another two companies for several years.</p>
                             
                         </div>
                         <div className="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">

@@ -27,7 +27,7 @@ const AddService = () => {
             picture, 
             title
         }
-        fetch('http://localhost:5000/addServices',{
+        fetch('https://travel-guide-server-woad.vercel.app/addServices',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

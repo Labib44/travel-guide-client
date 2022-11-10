@@ -9,6 +9,7 @@ import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import Register from "../../Pages/Register/Register";
 import Review from "../../Pages/Review/Review";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -22,11 +23,11 @@ const router = createBrowserRouter([
             { path: '/login', element: <Login></Login> },
             { path: '/register', element: <Register></Register> },
             {
-                path: '/details/:id', element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                path: '/details/:id', element:<PrivateRoutes><Details></Details></PrivateRoutes> ,
+                loader: ({ params }) => fetch(`https://travel-guide-server-woad.vercel.app/services/${params.id}`)
             },
             { path: '/review/:id', element: <Review></Review>,
-            loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            loader: ({ params }) => fetch(`https://travel-guide-server-woad.vercel.app/services/${params.id}`)
          },
             { path: '/addservice', element:<AddService></AddService> },
             { path: '/myreviews', element: <MyReviews></MyReviews> },

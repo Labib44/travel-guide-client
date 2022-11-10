@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import avatar from '../../assets/img/avatar-.jpg'
 
 const Details = () => {
     const { user } = useContext(AuthContext);
@@ -10,29 +11,37 @@ const Details = () => {
     const [reviews, setReview] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://travel-guide-server-woad.vercel.app/review',{
+            headers:{
+                authorization:`Bearer ${localStorage.getItem('travel-guide-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
 
 
-    const handleDelete=(id)=>{
-        const proceed=window.confirm('Are you sure...?')
-        if(proceed){
-            fetch(`http://localhost:5000/review/${id}`,{
-                method:'DELETE'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                if(data.deletedCount > 0){
-                    alert('Deleted Successfully');
-                    const remaining=reviews.filter(rev=>rev._id !==id);
-                    setReview(remaining);
-                }
-            })
-        }
-    }
+    // const handleDelete=(_id)=>{
+    //     console.log(_id);
+    //     const proceed=window.confirm('Are you sure...?')
+    //     if(proceed){
+    //         fetch(`https://travel-guide-server-woad.vercel.app/review/${_id}`,{
+    //             method:'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //         })
+    //         .then(res=>res.json())
+    //         .then(data=>{
+    //             console.log(data);
+    //             if(data.deletedCount > 0){
+    //                 alert('Deleted Successfully');
+    //                 const remaining=reviews.filter(rev=>rev._id !==_id);
+    //                 setReview(remaining);
+    //             }
+    //         })
+    //     }
+    // }
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
@@ -69,7 +78,13 @@ const Details = () => {
                 reviews.map(review => <div className=''>
                     <div className="flex flex-col max-w-lg p-3 m-10 space-y-3 overflow-hidden rounded-lg shadow-2xl  text-gray-800">
                     <div className="flex space-x-4">
-                        <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                        { user?.photoURL ?
+                        <>
+                        <img src={avatar} alt="" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"/>
+                        </>
+                        :
+                            <img alt="" src={user?.photoURL} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                        }
                         <div className="flex flex-col space-y-1">
                             <a rel="noopener noreferrer" href="/" className="text-sm font-semibold">{review.name}</a>
                         </div>
@@ -82,7 +97,7 @@ const Details = () => {
                         
                     </div>
                     <div>
-                    <button onClick={()=>handleDelete(_id)} className="btn ">Delete</button>
+                    {/* <button onClick={()=>handleDelete(review._id)} className="btn ">Delete</button> */}
                     </div>
                     </div>
                 </div>

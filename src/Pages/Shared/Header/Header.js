@@ -4,7 +4,15 @@ import logo from '../../../assets/img/logo.png'
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const {user}=useContext(AuthContext);
+    const {user, logOut}=useContext(AuthContext);
+
+   const handleLogOut=()=>{
+    logOut()
+    .then()
+    .catch();
+
+    }
+
     return (
         <div className="navbar bg-neutral">
             <div className="flex-none">
@@ -22,6 +30,7 @@ const Header = () => {
             <>
             <Link to={'/myreviews'} className="btn btn-ghost normal-case text-xl">My Reviews</Link>
             <Link to={'/addservice'} className="btn btn-ghost normal-case text-xl">Add Service</Link>
+            <Link onClick={handleLogOut} className="btn btn-ghost normal-case text-xl">Log Out</Link>
             </>
             :
                 <Link to={'/login'} className="btn btn-ghost normal-case text-xl">Login</Link>

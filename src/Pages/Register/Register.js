@@ -8,14 +8,16 @@ const Register = () => {
         event.preventDefault();
         const form=event.target;
         const name=form.name.value;
+        const photoURL=form.photoURL.value;
         const email=form.email.value;
         const password=form.password.value;
-        console.log(name, email, password);
+        console.log(name, photoURL, email, password);
 
         createUser(email, password)
         .then(result =>{
             const user=result.user;
             console.log(user)
+            form.reset();
         })
         .catch(error=>console.error(error))
     }
@@ -38,15 +40,19 @@ const Register = () => {
                         <input type="text" name="name" id="name" placeholder="Your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-2">
+                        <label for="email" className="block text-sm">Photo Url</label>
+                        <input type="text" name="photoUrl" id="name" placeholder="Your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" required/>
+                    </div>
+                    <div className="space-y-2">
                         <label for="email" className="block text-sm">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
+                        <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" required/>
                     </div>
                     <div className="space-y-2">
                         <div className="flex justify-between">
                             <label for="password" className="text-sm">Password</label>
                             
                         </div>
-                        <input type="password" name="password" id="password" placeholder="******" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" />
+                        <input type="password" name="password" id="password" placeholder="******" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-800 focus:dark:border-violet-400" required/>
                     </div>
                 </div>
                 <button type="submite" className="w-full  px-8 py-3 font-semibold rounded-md bg-sky-400 text-gray-900 text-xl">Submite</button>

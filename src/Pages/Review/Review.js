@@ -25,7 +25,7 @@ const Review = () => {
             title 
            
         }
-        fetch('http://localhost:5000/review',{
+        fetch('https://travel-guide-server-woad.vercel.app/review',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
