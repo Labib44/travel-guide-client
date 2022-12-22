@@ -23,13 +23,14 @@ const router = createBrowserRouter([
             { path: '/login', element: <Login></Login> },
             { path: '/register', element: <Register></Register> },
             {
-                path: '/details/:id', element:<PrivateRoutes><Details></Details></PrivateRoutes> ,
+                path: '/details/:id', element: <PrivateRoutes><Details></Details></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://travel-guide-server-woad.vercel.app/services/${params.id}`)
             },
-            { path: '/review/:id', element: <Review></Review>,
-            loader: ({ params }) => fetch(`https://travel-guide-server-woad.vercel.app/services/${params.id}`)
-         },
-            { path: '/addservice', element:<AddService></AddService> },
+            {
+                path: '/review/:id', element: <Review></Review>,
+                loader: ({ params }) => fetch(`https://travel-guide-server-woad.vercel.app/services/${params.id}`)
+            },
+            { path: '/addservice', element: <AddService></AddService> },
             { path: '/myreviews', element: <MyReviews></MyReviews> },
 
         ]

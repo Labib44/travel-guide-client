@@ -9,7 +9,7 @@ const Contact = () => {
                     <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Let's talk!</h2>
                     <div className="dark:text-gray-400">Vivamus in nisl metus? Phasellus.</div>
                 </div>
-                <img src={contact}  alt="" className="p-6 w-80" />
+                <img src={contact} alt="" className="p-6 w-80" />
             </div>
             <form novalidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div>
